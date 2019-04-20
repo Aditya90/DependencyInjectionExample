@@ -3,8 +3,8 @@ all: release test
 
 .PHONY: release
 release:
-	g++ main.cpp
+	g++ -o runMain main.cpp
 
 .PHONY: tests
 test:
-	g++ tests.cpp
+	g++ -o runTests tests.cpp

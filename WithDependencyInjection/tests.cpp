@@ -1,11 +1,8 @@
-
 #include <cassert>
+#include <iostream>
 
 #include "doorBellIntf.h"
 #include "securitySystem.h"
-
-
-using namespace std;
 
 class TestDoorBell : public DoorBellIntf
 {
@@ -24,7 +21,8 @@ void GivenTestBellDefaultWhenRingDoorbellThenReturnFalse()
   SecuritySystem secSystem(testbell);
   assert(secSystem.ringDoorbell() == false);
 
-  cout << "GivenTestBellDefaultWhenRingDoorbellThenReturnFalse - Passed \n";
+  std::cout
+      << "GivenTestBellDefaultWhenRingDoorbellThenReturnFalse - Passed \n";
 }
 
 void GivenTestBellTrueWhenRingDoorbellThenReturnTrue()
@@ -35,7 +33,7 @@ void GivenTestBellTrueWhenRingDoorbellThenReturnTrue()
   testbell->setRingRetVal(true);
   assert(secSystem.ringDoorbell() == true);
 
-  cout << "GivenTestBellTrueWhenRingDoorbellThenReturnTrue - Passed \n";
+  std::cout << "GivenTestBellTrueWhenRingDoorbellThenReturnTrue - Passed \n";
 }
 
 void GivenTestBellComboWhenRingDoorbellThenReturnCorrectRings()
@@ -53,11 +51,9 @@ void GivenTestBellComboWhenRingDoorbellThenReturnCorrectRings()
   secSystem.ringDoorbell();
   expectedNumberOfRings++;
 
-  cout << expectedNumberOfRings;
-
   assert(secSystem.getNumberRings() == expectedNumberOfRings);
 
-  cout
+  std::cout
       << "GivenTestBellComboWhenRingDoorbellThenReturnCorrectRings - Passed \n";
 }
 

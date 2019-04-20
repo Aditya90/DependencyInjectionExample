@@ -3,12 +3,15 @@
 
 #include "doorBellIntf.h"
 
+/**
+ * @brief A class representing a video based doorbell
+ */
 class VideoDoorBell : public DoorBellIntf
 {
  public:
   bool ring() override
   {
-    cout << "VideoDoorBell rang \n";
+    std::cout << "VideoDoorBell rang \n";
     return true;
   }
 };

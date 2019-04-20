@@ -5,7 +5,6 @@
 #include "securitySystem.h"
 #include "videoDoorBell.h"
 
-
 using namespace std;
 
 int main()
