@@ -2,7 +2,18 @@
 
 #include <memory>
 
-#include "doorBellIntf.h"
+/**
+ * @brief A class representing a simple button based doorbell
+ */
+class ButtonDoorBell
+{
+ public:
+  bool ring()
+  {
+    std::cout << "ButtonDoorBell rang \n";
+    return true;
+  }
+};
 
 /**
  * @brief A class representing the security system. It is composed of multiple
@@ -11,15 +22,10 @@
 class SecuritySystem
 {
  private:
-  std::shared_ptr<DoorBellIntf> doorbell_{nullptr};
+  ButtonDoorBell doorbell_{};
   unsigned int numDoorbellRings_{0};
 
  public:
-  SecuritySystem(std::shared_ptr<DoorBellIntf> newDoorBell)
-      : doorbell_{newDoorBell}
-  {
-  }
-
   /**
    * @brief Ring the doorbell of the security system
    * @return Returns true if the doorbell rang, and false otherwise
@@ -28,7 +34,7 @@ class SecuritySystem
   {
     bool retVal{false};
 
-    if (doorbell_->ring())
+    if (doorbell_.ring())
     {
       numDoorbellRings_++;
       retVal = true;

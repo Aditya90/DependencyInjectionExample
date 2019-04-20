@@ -8,3 +8,4 @@ release:
 .PHONY: tests
 test:
 	g++ -o runTests ./tests/tests.cpp
+
