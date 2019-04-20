@@ -5,7 +5,7 @@
 
 class ButtonDoorBell : public DoorBellIntf
 {
-public:
+ public:
   bool ring() override
   {
     cout << "ButtonDoorBell rang \n";

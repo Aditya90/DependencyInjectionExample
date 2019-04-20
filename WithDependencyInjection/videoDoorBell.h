@@ -5,7 +5,7 @@
 
 class VideoDoorBell : public DoorBellIntf
 {
-public:
+ public:
   bool ring() override
   {
     cout << "VideoDoorBell rang \n";

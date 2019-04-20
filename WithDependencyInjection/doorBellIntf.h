@@ -2,6 +2,6 @@
 
 class DoorBellIntf
 {
-public:
+ public:
   virtual bool ring() = 0;
 };
