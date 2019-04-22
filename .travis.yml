@@ -14,7 +14,6 @@ addons:
     - g++-8
     - clang-8
 install:
-- make get-deps
 - "[ $CXX = g++ ] && export CXX=g++-8 || true"
 - "[ $CXX = clang++ ] && export CXX=clang++-8|| true"
 script:
