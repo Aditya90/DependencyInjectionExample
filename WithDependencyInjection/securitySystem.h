@@ -15,7 +15,7 @@ class SecuritySystem
   unsigned int numDoorbellRings_{0};
 
  public:
-  SecuritySystem(std::shared_ptr<DoorBellIntf> newDoorBell)
+  explicit SecuritySystem(std::shared_ptr<DoorBellIntf> newDoorBell)
       : doorbell_{newDoorBell}
   {
   }

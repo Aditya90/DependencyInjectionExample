@@ -1,10 +1,12 @@
+CXXFLAGS = -g -Wall -Wfatal-errors -std=c++14
+
 .PHONY: all
 all: release test
 
 .PHONY: release
 release:
-	g++ -o runMain main.cpp
+	$(CXX) $(CXXFLAGS) -o runMain main.cpp
 
 .PHONY: tests
 test:
-	g++ -o runTests ./tests/tests.cpp
+	$(CXX) $(CXXFLAGS) -o runTests ./tests/tests.cpp
