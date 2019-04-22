@@ -18,4 +18,4 @@ install:
 - "[ $CXX = clang++ ] && export CXX=clang++-8|| true"
 script:
   - cd WithDependencyInjection && make -j8 && ./runTests
-  - cd NoDependencyInjection && make -j8 && ./runTests
+  - cd ../NoDependencyInjection && make -j8 && ./runTests
