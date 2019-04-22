@@ -1,5 +1,4 @@
 # Adopted from https://github.com/rsp/travis-hello-modern-cpp/blob/master/.travis.yml
-
 sudo: false
 language: cpp
 compiler:
@@ -11,10 +10,11 @@ addons:
     - ubuntu-toolchain-r-test
     - llvm-toolchain-xenial-8
     packages:
-    - g++-8
-    - clang-8
+    - g++-7
+    - clang-7
 install:
-- "[ $CXX = g++ ] && export CXX=g++-8 || true"
-- "[ $CXX = clang++ ] && export CXX=clang++-8 || true"
+- make get-deps
+- "[ $CXX = g++ ] && export CXX=g++-7 || true"
+- "[ $CXX = clang++ ] && export CXX=clang++-7|| true"
 script:
   - cd WithDependencyInjection && make -j8 && ./runTests
